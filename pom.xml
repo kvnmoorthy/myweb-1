@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 	<groupId>in.shan5a6</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
@@ -13,19 +12,12 @@
 		<docker.image.prefix>devops</docker.image.prefix>
 	</properties>	
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-                 <dependency>
-                   <groupId>javax.servlet</groupId>
-                   <artifactId>javax.servlet-api</artifactId>
-                   <version>4.0.1</version>
-                   <scope>provided</scope>
-                 </dependency>
-	        <!-- https://mvnrepository.com/artifact/org.apache.maven/maven-artifact -->
-                 <dependency>
-                   <groupId>org.apache.maven</groupId>
-                   <artifactId>maven-artifact</artifactId>
-                   <version>3.8.7</version>
-                </dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
 			<!-- Demo git -->
 		
 		<dependency>
@@ -65,21 +57,19 @@
 <build>
     <plugins>
         <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.8.7</version>
-         </plugin>
-    </plugins>
-    <plugins>
-        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.7</version>
+            <version>3.6.1</version>
             <configuration>
                 <source>1.7</source>
                 <target>1.7</target>
             </configuration>
         </plugin>
+	    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.8.7</version>
+         </plugin>
 	    <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
